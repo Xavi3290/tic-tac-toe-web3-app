@@ -1,0 +1,21 @@
+<div class="lobby-container">
+    <h1>Welcome to the Lobby</h1>
+
+    <!-- Estadísticas del jugador -->
+    <div *ngIf="stats">
+        <h2>Your Stats</h2>
+        <ul class="list list-unstyled">
+            <li>Wins: {{ stats.wins }}</li>
+            <li>Draws: {{ stats.draws }}</li>
+            <li>Losses: {{ stats.losses }}</li>
+        </ul>
+    </div>
+
+    <div *ngIf="!stats">
+        <p>Loading your stats ...</p>
+    </div>
+
+    <button (click)="joinOrCreateGame()" class="btn btn-primary">
+        Join or Create Game
+    </button>
+</div>

@@ -1,0 +1,130 @@
+/* Estilos generales del body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e9ecef; /* Fondo gris claro */
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .clr-row{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 50px;
+    box-shadow: none; 
+    max-width: 5000px;
+    width: 100%;
+    height: 600px;
+    text-align: center;
+    border: none;
+  }
+
+  /* Estilos para el contenedor de la tarjeta (Clarity Card) */
+  .card {
+    border-radius: 12px;
+    box-shadow: none; 
+    background-color: #ffffff;
+    padding: 40px;
+    max-width: 1000px; /* Limitar ancho en pantallas grandes */
+    width: 100%;
+    text-align: center;
+    border: none;
+    display: flex
+  }
+  
+  /* Estilos para el encabezado */
+  .card-header h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos de los campos de entrada */
+  .clr-input {
+    font-size: 1.1rem;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ced4da;
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  .clr-input:focus {
+    border-color: #1abc9c;
+    outline: none;
+    box-shadow: 0 0 5px rgba(26, 188, 156, 0.4); /* Efecto de sombra al hacer foco */
+  }
+  
+  /* Etiquetas del formulario */
+  .clr-control-label {
+    font-size: 1.1rem;
+    color: #34495e;
+    margin-bottom: 8px;
+    text-align: left;
+    display: block;
+  }
+  
+  /* Botones de acción */
+  .card-footer {
+    margin-top: 20px;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    border-radius: 25px; /* Bordes suaves */
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    width: 100%; /* Ocupa todo el ancho en pantallas pequeñas */
+    margin-bottom: 10px;
+  }
+  
+  .btn:hover {
+    background-color: #3498db; /* Color de fondo en hover */
+    color: white;
+    border-color: transparent;
+  }
+  
+  /* Botón de submit */
+  .btn-outline {
+    border: 2px solid #3498db;
+    background-color: transparent;
+    color: #3498db;
+  }
+  
+  .btn-outline:hover {
+    background-color: #3498db;
+    color: white;
+  }
+  
+  /* Mensajes de error */
+  .alert-danger {
+    margin-top: 20px;
+    background-color: #e74c3c;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 1rem;
+    text-align: left;
+  }
+  
+  /* Media query para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .card {
+      padding: 20px;
+      max-width: 100%;
+    }
+  
+    .card-header h2 {
+      font-size: 1.5rem;
+    }
+  
+    .btn {
+      font-size: 1rem;
+    }
+  }
+  
