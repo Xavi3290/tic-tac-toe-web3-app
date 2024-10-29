@@ -1,0 +1,56 @@
+services:
+  mysql:
+    build:
+      context: ./mysql
+    ports:
+      - "3308:3306" # Exponer el puerto 3308 en el host hacia el 3306 en el contenedor
+    environment:
+      MYSQL_DATABASE: tres_en_raya
+      MYSQL_ROOT_PASSWORD: 12345 # Solo configurar root password, no MYSQL_USER
+    volumes:
+      - mysql-data:/var/lib/mysql # Volumen para persistir datos
+    networks:
+      - app-network
+
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "3000:3000" # Exponer el puerto del backend
+    environment:
+      DB_HOST: mysql          # Usamos el nombre del servicio como host
+      DB_USER: root
+      DB_PASSWORD: 12345
+      DB_NAME: tres_en_raya
+      DB_PORT: 3306           # En el contenedor de MySQL usamos el puerto interno
+      ALCHEMY_SEPOLIA_URL: # Alchemy sepolia url
+      PRIVATE_KEY: # Private key
+      PLAYER_STATS_ADDRESS: # Contract address
+    depends_on:
+      - mysql
+    entrypoint: ["sh", "-c", "until mysqladmin ping -h mysql --silent; do echo waiting for mysql; sleep 1; done; npm start"]
+    # Esto permite que el backend espere a que MySQL esté listo antes de iniciar.
+    networks:
+      - app-network
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "4200:4200" # Exponer el puerto del frontend
+    depends_on:
+      - backend # Espera a que el backend esté levantado antes de iniciar
+    networks:
+      - app-network
+
+volumes:
+  mysql-data: # Volumen para la persistencia de datos de MySQL
+  
+networks:
+  app-network:
+    driver: bridge
+
+
+
+# docker-compose up --build
+# docker-compose down -v

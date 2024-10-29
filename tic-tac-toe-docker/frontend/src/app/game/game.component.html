@@ -1,0 +1,23 @@
+<div class="game-container">
+    <h2>Tic-Tac-Toe</h2>
+    <div class="board">
+        <div *ngFor="let cell of board; let i = index" class="cell" (click)="makeMove(i)">
+            {{ cell }}
+        </div>
+    </div>
+
+    <div *ngIf="winner || draw">
+        <p *ngIf="winner">Player {{ winner }} wins!</p>
+        <p *ngIf="draw">The game is a draw!</p>
+    </div>
+
+    <button class="btn btn-primary" (click)="goToLobby()">Return to Lobby</button>
+    
+    <div class="chat">
+        <h3>Chat</h3>
+        <input type="text" [(ngModel)]="newMessage" (keyup.enter)="sendMessage()" placeholder="Type a message">
+        <div *ngFor="let msg of chatMessages" class="chat-message">
+            <p>Player {{ msg.playerId }}: {{msg.message}}</p>
+        </div>
+    </div>
+</div>

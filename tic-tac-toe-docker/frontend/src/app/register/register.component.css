@@ -1,0 +1,132 @@
+/* Estilos globales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e9ecef; /* Fondo gris claro */
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clr-row{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 50px;
+    box-shadow: none; 
+    max-width: 5000px;
+    width: 100%;
+    height: 600px;
+    text-align: center;
+    border: none;
+  }
+
+.card {
+    border-radius: 12px;
+    box-shadow: none; 
+    background-color: #ffffff;
+    padding: 30px;
+    max-width: 700px; /* Limitar ancho en pantallas grandes */
+    width: 100%;
+    text-align: center;
+    border: none;
+  }
+
+/* Título del registro */
+h2 {
+    font-size: 2.2rem;
+    color: #2c3e50; /* Azul oscuro */
+    margin-bottom: 20px;
+}
+
+/* Campos del formulario */
+input {
+    font-size: 1.2rem;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ced4da;
+    margin-bottom: 0px;
+    width: 100%;
+    transition: border-color 0.3s ease-in-out;
+}
+
+input:focus {
+    border-color: #3498db; /* Azul claro para enfoque */
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.4); /* Efecto de sombra */
+}
+
+/* Etiquetas del formulario */
+label {
+    font-size: 1.1rem;
+    color: #34495e;
+    margin-bottom: 5px;
+    text-align: left;
+    display: block;
+}
+
+/* Botones de acción */
+.btn {
+    padding: 10px 20px;
+    border-radius: 25px; /* Bordes suaves */
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 280px;
+    margin-bottom: 10px;
+}
+
+/* Efecto hover para botones */
+.btn:hover {
+    background-color: #3498db;
+    color: white;
+    border-color: transparent;
+}
+
+/* Botón de submit */
+.btn-primary {
+    border: 2px solid #3498db;
+    background-color: transparent;
+    color: #3498db;
+}
+
+.btn-primary:hover {
+    background-color: #3498db;
+    color: white;
+}
+
+/* Mensajes de error */
+.alert-danger {
+    background-color: #e74c3c;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 1rem;
+    text-align: left;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+    .register-container {
+        padding: 30px;
+        max-width: 100%;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    input {
+        font-size: 1rem;
+    }
+
+    .btn {
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,56 @@
+<div class="clr-row">
+  <div class="clr-col-lg-6 clr-col-md-8 clr-col-12">
+    <div class="card">
+      <div class="card-block">
+        <div class="card-header">
+          <h2>Tic-Tac-Toe - Login</h2>
+        </div>
+        <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+          <div class="clr-form-control">
+            <label for="username" class="clr-control-label">Email</label>
+            <div class="clr-control-container">
+              <div class="clr-input-wrapper">
+                <input
+                  id="username"
+                  type="email"
+                  name="username"
+                  class="clr-input"
+                  required
+                  [(ngModel)]="username"
+                  email
+                />
+                <span class="clr-subtext">Please enter a valid email address</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="clr-form-control">
+            <label for="password" class="clr-control-label">Password</label>
+            <div class="clr-control-container">
+              <div class="clr-input-wrapper">
+                <input
+                  id="password"
+                  type="password"
+                  name="password"
+                  class="clr-input"
+                  required
+                  [(ngModel)]="password"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div *ngIf="errorMessage" class="alert alert-danger">
+            {{ errorMessage }}
+          </div>          
+
+          <div class="card-footer">
+            <button class="btn btn-outline" type="submit">Login</button>
+            <button class="btn btn-outline" type="button" (click)="register()">Register</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
